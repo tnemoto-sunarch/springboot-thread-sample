@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: thread-sample
+
+sample:
+  thread1:
+    # この値までThreadを生成する
+    core-pool-size: 2
+    # 上記を超えたらこの値までスレッド生成を待機させる
+    queue-capacity: 500
+    # 上記を超えたらこの値までスレッドを増やす（これをさらに越えるとreject）
+    max-pool-size: 2
+    thread-name-prefix: thread1-
+  thread2:
+    core-pool-size: 5
+    max-pool-size: 5
+    queue-capacity: 500
+    thread-name-prefix: thread2-
